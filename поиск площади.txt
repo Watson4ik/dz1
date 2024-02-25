@@ -1,34 +1,51 @@
-#include <iostream>
+#include<iostream>
+#include <cmath>
 using namespace std;
-#include <math.h>
 
 int main()
 {
-	float x;
-	float y;
-	cout << "Введите чему равен x - ";
-	cin >> x;
-
-	if (x < 0)
-	{
-		y = pow((pow(x, 3) + 1), 2);
-		cout << "y = " << y << endl;
-	}
-
-	else if (x >= 0 && x < 1)
-	{
-		y = x * 0;
-		cout << "y = " << y << endl;
-	}
-
-	else if (x >= 1)
-	{
-		y = fabs(pow(x, 2) - 5 * x + 1);
-		cout << "y = " << y << endl;
-	}
-
-	else
-	{
-		cout << "Значения x не существует" << endl;
-	}
+    int result;
+    cout << "Выберите чью площадь программа будет подсчитывать:\n1. Квадрат;\n2. Треугольник";
+     cin >> result;
+     switch (result)
+     {
+     case 1 : 
+     {
+     float a, s ;
+     cout << "введите длинну стороны квадрата";
+     cin >> a >>  s ;
+     if(a>0)
+     {
+     s = a*a;
+     cout << "Площадь квадрата с заданой стороной = " << s << endl;
+     }
+     else{
+     cout << "Квадрата не существует" << endl;
+     }
+     break;
+     }
+     case 2 :
+     {
+      float a, b, c, P, S ;
+     cout << "введите длинны сторон треугольника ";
+      cin >> a >> b >> c ; 
+       if(a + b > c && a + c > b && b + c > a)
+       {
+          P = (a + b + c) / 2;
+          S = sqrt(P * (P - a) * (P - b) * (P - c));
+           cout << "Площадь треугольника с задаными сторонами =  " << S << endl;
+       }
+        else
+        {
+             cout << "Треугольника не существует" << endl;
+        }
+         break;
+    }
+         case 3 :
+         break;
+         default:
+         cout <<"Непрально введен номер фигуры" << endl;
+ 
+     }
+     return 0 ;
 }
