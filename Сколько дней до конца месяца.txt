@@ -1,0 +1,14 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cout << "Введите количество дней в месяце" << endl;
+    cin >> a;
+    cout << "Введите какой сейчас день месяца по счету" << endl;
+    cin >> b;
+    c=a-b;
+    cout << "До конца месяца осталось:\t" << c << "\tДней" << endl;
+}
